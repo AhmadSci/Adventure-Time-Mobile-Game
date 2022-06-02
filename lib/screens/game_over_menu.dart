@@ -3,7 +3,7 @@ import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 
 import 'main_menu.dart';
-import '../game/widgets/overlays/pause_button.dart';
+// import '../game/widgets/overlays/pause_button.dart';
 
 // ignore: must_be_immutable
 class GameOverMenu extends StatelessWidget {
