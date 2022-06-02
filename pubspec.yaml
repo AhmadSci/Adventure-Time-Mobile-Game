@@ -1,0 +1,72 @@
+name: adventure_time_game
+description: A Flutter project for my multimedia course.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flame: 1.1.1
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.2
+  google_fonts: ^2.3.1
+  flutter_launcher_icons: ^0.9.2
+  shared_preferences: ^2.0.15
+  flame_audio: ^1.0.2
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo.png"
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+flutter:
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/images/
+    - assets/images/scoreboard-bg.png
+    - assets/images/idle/
+    - assets/images/walk/
+    - assets/images/hit/
+    - assets/images/jump/
+    - assets/images/punch/
+    - assets/images/hurt/
+    - assets/images/PB/
+    - assets/images/gumParalax/
+    - assets/images/CinnamonBun/
+    - assets/images/BananaGuard/
+    - assets/images/ICE/iceKing/
+    - assets/images/ICE/iceKingdom/
+    - assets/images/ICE/penguin/
+    - assets/images/ICE/iceWorm/
+    - assets/audio/
+    - assets/audio/button.wav
+    - assets/audio/death.wav
+  
+  fonts:
+    - family: Red Hat Display
+      fonts:
+      - asset: assets/fonts/Red_Hat_Display/RedHatDisplay-Regular.ttf
+      - asset: assets/fonts/Red_Hat_Display/RedHatDisplay-ExtraBold.ttf
+        weight: 800
+      - asset: assets/fonts/Red_Hat_Display/RedHatDisplay-SemiBold.ttf
+        weight: 600
+
+    - family: Pixely
+      fonts:
+      - asset: assets/fonts/Pixel/VT323-Regular.ttf
+
