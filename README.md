@@ -4,12 +4,22 @@
 
 Adventure time themed mobile game made using Flutter + Flame engine
 
-## Demo
+# Demo
+
+## Jumping
 
 ![jumping](/assets/images/jump.gif)
+
 <br>
+
+## Getting Hit
+
 ![hit](/assets/images/hit-.gif)
+
 <br>
+
+## Game Over
+
 ![dying](/assets/images/die.gif)
 
 ## Build steps
