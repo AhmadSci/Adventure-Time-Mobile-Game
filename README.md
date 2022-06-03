@@ -22,7 +22,11 @@ Adventure time themed mobile game made using Flutter + Flame engine
 
 ![dying](/assets/images/die.gif)
 
-## Build steps
+# Download
+
+- [Itch.io](https://7oda.itch.io/run-finn)
+
+# Build steps
 
 ```bash
 # Clone this project
