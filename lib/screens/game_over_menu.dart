@@ -1,13 +1,23 @@
+/* 
+*******************************************************************************
+
+                A widget to display the GameOver Overlay
+
+*******************************************************************************
+*/
+
 import 'package:flame/game.dart';
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 
 import 'main_menu.dart';
-// import '../game/widgets/overlays/pause_button.dart';
 
 // ignore: must_be_immutable
 class GameOverMenu extends StatelessWidget {
+  // setting an id
   static const String id = 'game_over_menu';
+
+  // creating a variable to get a refrence for the game
   late FlameGame gameref;
 
   GameOverMenu({required this.gameref, Key? key}) : super(key: key);
@@ -41,18 +51,6 @@ class GameOverMenu extends StatelessWidget {
               ),
             ),
 
-            // Play button.
-            // SizedBox(
-            //   width: MediaQuery.of(context).size.width / 3,
-            //   child: ElevatedButton(
-            //     onPressed: () {
-            //       gameref.resumeEngine();
-            //       gameref.overlays.add(PauseButton.id);
-            //       gameref.overlays.remove(id);
-            //     },
-            //     child: const Text('Restart'),
-            //   ),
-            // ),
             SizedBox(
               width: MediaQuery.of(context).size.width / 3,
               child: ElevatedButton(
@@ -65,6 +63,7 @@ class GameOverMenu extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
+                  // on button press, return to the main screen and resume the main screen music
                   FlameAudio.play('button.wav');
                   Navigator.of(context).pushReplacement(PageRouteBuilder(
                     pageBuilder: (_, __, ___) => MainMenu(),

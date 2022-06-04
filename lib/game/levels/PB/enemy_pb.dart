@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../settings/enemyAnimations.dart';
 import '../../settings/enemydata.dart';
 
+// defining the types of enemies in this level
 enum EnemyTypePB {
   cinamonBun,
   bananaGuard,
@@ -15,6 +16,7 @@ enum EnemyTypePB {
 }
 
 class EnemyPB extends SpriteAnimationComponent with CollisionCallbacks {
+  // class variables
   late EnemyTypePB enemyType;
   late EnemeyData enemyData;
   static Random random = Random();
@@ -25,9 +27,12 @@ class EnemyPB extends SpriteAnimationComponent with CollisionCallbacks {
   late Map<EnemyTypePB, EnemeyData> enemyDetails;
 
   EnemyPB({required this.enemyType, required this.level, double? speed}) {
+    // setting the speed of the enemy if it is given in the constructor
     if (speed != null) {
       enemySpeed = speed;
     }
+
+    // setting the enemy details for each enemy type listed in the enum
     enemyDetails = {
       EnemyTypePB.cinamonBun: EnemeyData(
         sprite: cinamonSprites,
@@ -68,6 +73,8 @@ class EnemyPB extends SpriteAnimationComponent with CollisionCallbacks {
   @override
   Future<void>? onLoad() async {
     super.onLoad();
+
+    // setting the data for each enemy on load of the enemy
     enemyData = enemyDetails[enemyType] as EnemeyData;
     animation = SpriteAnimation.spriteList(
       await Future.wait(enemyData.sprite),
@@ -77,6 +84,8 @@ class EnemyPB extends SpriteAnimationComponent with CollisionCallbacks {
     y = enemyData.y;
     anchor = Anchor.center;
     size = enemyData.size;
+
+    // setting the max y value for the enemies that can fly
     if (enemyData.canFly && random.nextBool()) {
       y -= height * (1 + random.nextDouble());
     }
@@ -85,14 +94,19 @@ class EnemyPB extends SpriteAnimationComponent with CollisionCallbacks {
   @override
   void update(double dt) {
     super.update(dt);
+
+    // changing the x position of the enemy per frame based on the speed
     x -= enemyData.speed * dt;
 
+    // checking if the enemy is off screen and if so removing it
     checkremove(this);
   }
 
   @override
   void onMount() {
     super.onMount();
+
+    // adding a hitbox to the enemy
     add(
       RectangleHitbox.relative(
         Vector2.all(0.8),
@@ -102,6 +116,7 @@ class EnemyPB extends SpriteAnimationComponent with CollisionCallbacks {
     );
   }
 
+//a function to check if the enemy is off screen and if so removing it
   void checkremove(EnemyPB enemy) {
     if (enemy.x < -enemy.width) {
       level.remove(this);

@@ -1,3 +1,11 @@
+/* 
+*******************************************************************************
+
+              A widget to display the Main screen
+
+*******************************************************************************
+*/
+
 import 'dart:ui';
 
 import 'package:adventure_time_game/screens/score_board.dart';
@@ -29,7 +37,6 @@ class MainMenu extends StatelessWidget {
                 decoration: BoxDecoration(color: Colors.white.withOpacity(0.0)),
               ),
             ),
-            // margin: EdgeInsets.fromLTRB(0.0, 32.0, 0.0, 46.0),
           ),
 
           Positioned(
@@ -64,6 +71,7 @@ class MainMenu extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
+                        // on button press, go to the Levels Screen
                         FlameAudio.play('button.wav');
                         Navigator.of(context).pushReplacement(PageRouteBuilder(
                           pageBuilder: (_, __, ___) => Levels(),
@@ -101,6 +109,7 @@ class MainMenu extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
+                      // on button press, go to the Scoreboard Screen
                       FlameAudio.play('button.wav');
                       Navigator.of(context).pushReplacement(PageRouteBuilder(
                         pageBuilder: (_, __, ___) => ScoreBoard(),

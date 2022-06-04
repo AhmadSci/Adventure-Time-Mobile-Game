@@ -1,3 +1,11 @@
+/* 
+*******************************************************************************
+
+                A widget to display the ScoreBoard screen
+
+*******************************************************************************
+*/
+
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -7,25 +15,26 @@ import 'main_menu.dart';
 class ScoreBoard extends StatefulWidget {
   ScoreBoard({Key? key}) : super(key: key);
 
-  // _read();
-
   @override
   State<StatefulWidget> createState() {
-    // _read();
-    // throw UnimplementedError();
     return ScoreBoardState();
   }
 }
 
 class ScoreBoardState extends State<ScoreBoard> {
+  // setting the variables
   late Future<int> score1;
   late Future<int> score2;
   late Future<int> score3;
+
+  // getting an instrance of shared preferences
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+
   @override
   void initState() {
     super.initState();
 
+    // getting the scores from shared preferences
     score1 = _prefs.then((SharedPreferences prefs) {
       return prefs.getInt('hscore1') ?? 0;
     });
@@ -35,10 +44,9 @@ class ScoreBoardState extends State<ScoreBoard> {
     score3 = _prefs.then((SharedPreferences prefs) {
       return prefs.getInt('hscore3') ?? 0;
     });
-
-    // debugPrint('saved $score1 $score2 $score3');
   }
 
+  // this function displays the scores on the screen using future builder
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +61,6 @@ class ScoreBoardState extends State<ScoreBoard> {
                 fit: BoxFit.fitHeight,
               ),
             ),
-            // margin: EdgeInsets.fromLTRB(0.0, 32.0, 0.0, 46.0),
           ),
 
           Positioned(
@@ -82,14 +89,13 @@ class ScoreBoardState extends State<ScoreBoard> {
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: "Pixely",
-                                  // color: Colors.white,
                                 ),
                               );
                             }
                         }
                       },
                     ),
-                  ), // fit: BoxFit.fill,
+                  ),
                 ]),
           ),
 
@@ -119,14 +125,13 @@ class ScoreBoardState extends State<ScoreBoard> {
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: "Pixely",
-                                  // color: Colors.white,
                                 ),
                               );
                             }
                         }
                       },
                     ),
-                  ), // fit: BoxFit.fill,
+                  ),
                 ]),
           ),
 
@@ -156,14 +161,13 @@ class ScoreBoardState extends State<ScoreBoard> {
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: "Pixely",
-                                  // color: Colors.white,
                                 ),
                               );
                             }
                         }
                       },
                     ),
-                  ), // fit: BoxFit.fill,
+                  ),
                 ]),
           ),
 
@@ -205,7 +209,7 @@ class ScoreBoardState extends State<ScoreBoard> {
                                             255, 255, 255, 255)))),
                       ),
                     ),
-                  ), // fit: BoxFit.fill,
+                  ),
                 ]),
           ),
         ],

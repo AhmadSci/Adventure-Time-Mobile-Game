@@ -1,3 +1,11 @@
+/* 
+*******************************************************************************
+
+              a widget to display the bubblegum kingdom level
+
+*******************************************************************************
+*/
+
 import 'package:adventure_time_game/game/levels/PB/PBLevel.dart';
 import 'package:adventure_time_game/screens/game_over_menu.dart';
 import 'package:flame/game.dart';
@@ -6,7 +14,6 @@ import 'package:flutter/material.dart';
 import '../game/widgets/overlays/pause_button.dart';
 import 'pause_menu.dart';
 
-// ignore: must_be_immutable
 AdventureTimeGamePB myGame = AdventureTimeGamePB();
 
 class PBGamePlay extends StatelessWidget {
@@ -15,7 +22,7 @@ class PBGamePlay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GameWidget(
-      // This will dislpay a loading bar until [DinoRun] completes
+      // This will dislpay a loading screen until the level completes
       // its onLoad method.
       loadingBuilder: (conetxt) => Container(
         decoration: const BoxDecoration(

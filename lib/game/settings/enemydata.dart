@@ -1,5 +1,13 @@
 import 'package:flame/components.dart';
 
+/* 
+*******************************************************************************
+
+        this class is for storing the data for each individual enemy
+
+*******************************************************************************
+*/
+
 class EnemeyData {
   late Iterable<Future<Sprite>> sprite;
   late double stepTime;

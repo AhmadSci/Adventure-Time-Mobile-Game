@@ -53,6 +53,9 @@ flutter:
     - assets/images/ICE/iceKingdom/
     - assets/images/ICE/penguin/
     - assets/images/ICE/iceWorm/
+    - assets/images/ICE/iceBoss/charge/
+    - assets/images/ICE/iceBoss/death/
+    - assets/images/ICE/iceBoss/walk/
     - assets/audio/
     - assets/audio/button.wav
     - assets/audio/death.wav

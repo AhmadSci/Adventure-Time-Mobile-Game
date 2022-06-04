@@ -1,3 +1,11 @@
+/* 
+*******************************************************************************
+
+              A widget to display the Levels screen
+
+*******************************************************************************
+*/
+
 import 'dart:ui';
 
 import 'package:adventure_time_game/screens/bubblegum_level.dart';
@@ -62,6 +70,7 @@ class Levels extends StatelessWidget {
                             fontFamily: 'Pixely',
                           )),
                       onPressed: () {
+                        // on button press, go to the Princess Bubblegum level
                         FlameAudio.play('button.wav');
                         FlameAudio.bgm.pause();
                         Navigator.of(context).pushReplacement(PageRouteBuilder(
@@ -81,7 +90,7 @@ class Levels extends StatelessWidget {
                                             Color.fromARGB(255, 15, 6, 140)))),
                       ),
                     ),
-                  ), // fit: BoxFit.fill,
+                  ),
                 ]),
           ),
 
@@ -101,6 +110,7 @@ class Levels extends StatelessWidget {
                             fontFamily: 'Pixely',
                           )),
                       onPressed: () {
+                        // on button press, go to the ice Kingdom level
                         FlameAudio.play('button.wav');
                         FlameAudio.bgm.pause();
                         Navigator.of(context).pushReplacement(PageRouteBuilder(
@@ -120,7 +130,7 @@ class Levels extends StatelessWidget {
                                             Color.fromARGB(255, 15, 6, 140)))),
                       ),
                     ),
-                  ), // fit: BoxFit.fill,
+                  ),
                 ]),
           ),
 
@@ -141,6 +151,7 @@ class Levels extends StatelessWidget {
                             fontFamily: "Pixely",
                           )),
                       onPressed: () {
+                        // on button press, go to the main menu
                         FlameAudio.play('button.wav');
                         Navigator.of(context).pushReplacement(PageRouteBuilder(
                           pageBuilder: (_, __, ___) => MainMenu(),
@@ -159,7 +170,7 @@ class Levels extends StatelessWidget {
                                             Color.fromARGB(255, 15, 6, 140)))),
                       ),
                     ),
-                  ), // fit: BoxFit.fill,
+                  ),
                 ]),
           ),
         ],
